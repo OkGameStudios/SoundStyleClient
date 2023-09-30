@@ -6,6 +6,13 @@ on:
   workflow_dispatch:
 
 jobs:
+  install:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
   release:
     strategy:
       fail-fast: false
@@ -42,9 +49,6 @@ jobs:
       - name: Install Rust (Stable)
         run:
           curl https://sh.rustup.rs -sSf | sh -s -- -y
-
-      - name: Install pnpm
-        run: npm i -g pnpm
         
       - name: Install dependencies (ubuntu only)
         if: matrix.platform == 'ubuntu-latest'
