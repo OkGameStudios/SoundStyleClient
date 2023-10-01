@@ -47,7 +47,7 @@
         "resizable": true,
         "title": "soundstyle",
         "width": 800,
-        "height": 800,
+        "height": 600,
         "transparent": false,
         "decorations": true
       }
