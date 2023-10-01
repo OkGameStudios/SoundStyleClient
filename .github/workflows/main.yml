@@ -31,6 +31,11 @@ jobs:
         id: build_changelog
         run: echo "changelog=- ADD CHANGELOG" >> $GITHUB_OUTPUT
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Node.js setup
         uses: actions/setup-node@v3
         # NOTE: enterprise developers may hard code a version
@@ -50,7 +55,7 @@ jobs:
         
       - name: Install app dependencies from lockfile and build frontend
         # NOTE: comment out && yarn build if frontend does not have build script
-        run: npm ci #&& yarn build
+        run: pnpm i --frozen-lockfile #&& yarn build
 
       - name: Build the app
         uses: tauri-apps/tauri-action@v0
