@@ -18,7 +18,7 @@ fn main() {
 
             let _ = _window.maximize();
             // _window.eval("document.getElementById(\"app-mount\").addEventListener(\"DOMContentLoaded\", (event) => { console.log('loaded') })");
-            _window.open_devtools();
+            // _window.open_devtools();
             let mut i = 0;
             for entry in WalkDir::new("src/injections/") {
                 i += 1;
