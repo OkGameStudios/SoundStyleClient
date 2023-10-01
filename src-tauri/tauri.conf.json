@@ -4,11 +4,11 @@
     "beforeBuildCommand": "",
     "devPath": "https://discord.com/app",
     "distDir": "https://discord.com/app",
-    "withGlobalTauri": true
+    "withGlobalTauri": false
   },
   "package": {
     "productName": "soundstyle",
-    "version": "0.0.0"
+    "version": "0.0.4"
   },
   "tauri": {
     "allowlist": {
@@ -25,8 +25,7 @@
         "maximize": true,
         "minimize": true,
         "unmaximize": true,
-        "unminimize": true,
-        "startDragging": true
+        "unminimize": true
       }
     },
     "bundle": {
