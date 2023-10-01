@@ -31,6 +31,5 @@ fn main() {
 
             Ok(())
         })
-        // .invoke_handler(tauri::generate_handler![greet])
         .run(tauri::generate_context!());
 }
