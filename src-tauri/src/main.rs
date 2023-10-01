@@ -31,7 +31,6 @@ fn main() {
                     let mut str = String::new();
                     reader.read_to_string(&mut str).expect("cannot read file");
                     let _ = _window.eval(&str);
-                    // println!("{}", str)
                 }
             }
 
