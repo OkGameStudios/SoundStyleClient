@@ -1,7 +1,7 @@
 [package]
 name = "soundstyle"
 version = "0.0.0"
-description = "A Tauri App"
+description = "A custom discord client focused on speed and performance"
 authors = ["you"]
 license = ""
 repository = ""
