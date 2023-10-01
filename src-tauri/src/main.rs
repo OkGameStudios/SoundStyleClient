@@ -5,11 +5,6 @@ use tauri::Manager;
 use walkdir::WalkDir;
 use std::fs::File;
 use std::io::{ BufReader, Read};
-// Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-// #[tauri::command]
-// fn greet(name: &str) -> String {
-//     format!("Hello, {}! You've been greeted from Rust!", name)
-// }
 
 fn main() {
     let _ = tauri::Builder::default()
