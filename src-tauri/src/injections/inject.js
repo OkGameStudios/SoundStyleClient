@@ -59,13 +59,34 @@ function addMenu() {
 
 const offline = addEventListener("offline", () => {
   const innerApp = document?.querySelector('div[id="app-mount"]')
-
-  innerApp.style = "display: grid"
-  innerApp.innerHTML = `
-    <div style="place-self: center" >You are currently offline! The window will reload when you get back online</div>
+  
+  const banner = document.createElement("div")
+  banner.style.backgroundColor = "crimson"
+  banner.style.color = "white"
+  banner.style.display = "flex"
+  banner.style.justifyContent = "space-between"
+  banner.style.userSelect = "text"
+  banner.style.padding = "10px"
+  banner.style.border = "red"
+  banner.style.textAlign = "center"
+  banner.id = "offline-banner"
+  banner.innerHTML = `
+  You are currently offline! You might still get messages but you won't be able to send them!
+  <button style="background: none; color: white;" id="close-button" >X</button>
   `
+  innerApp.insertBefore(banner, innerApp.firstChild)
+
+  document.getElementById("close-button").addEventListener("click", () => {
+    innerApp.removeChild(document.getElementById("offline-banner"))
+  })
+//   innerApp.style = "display: grid"
+//   innerApp.innerHTML = `
+//     <div style="place-self: center" >You are currently offline! The window will reload when you get back online</div>
+//   `
 })
 
 const online = addEventListener("online", () => {
-  window.location.reload()
+  const innerApp = document?.querySelector('div[id="app-mount"]')
+
+  innerApp.removeChild(document.getElementById("offline-banner"))
 })
